@@ -1,0 +1,35 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+
+@mixin absCenter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform : translate(-50%,-50%);
+}
+
+
+
+/*
+phone : 600 px 
+tab-portrait : 900 px ||
+tab-landscape :  1200px  =
+large desktop : 1800 px
+
+*/
+@mixin respond($breakpoint) {
+    @if($breakpoint== 'phone') {
+        @media (max-width : 600px) {
+            @content
+        }
+    }
+}
+
+
+
